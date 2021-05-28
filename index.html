@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie-edge"/>
+    <link rel="stylesheet" href="styles/owfont-regular.css"/>
+    <link rel="stylesheet" href="styles/styles.css"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400&display=swap"
+          rel="stylesheet">
+
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet' />
+
+
+
+    <title>Fancy weather</title>
+</head>
+<body>
+<div id="main">
+    <header class="header_control-block">
+        <div class="header_btns">
+            <div id="reload" class="btn_reload btn"><i></i></div>
+            <div class="btn_lang btn"><i></i>
+                <select id="lang">
+                    <option>ru</option>
+                    <option>en</option>
+                </select>
+            </div>
+            <div class="btns_temp">
+                <div id="temp-f" class="btn_temp btn_temp-f btn " data-scale="F">°F<i></i></div>
+                <div id="temp-c" class="btn_temp btn_temp-c btn" data-scale="C">°C<i></i></div>
+            </div>
+        </div>
+
+        <div class="search-block">
+            <input class="search-input" type="text" name="city" placeholder="Search" autocomplete="off">
+            <div class="btn_voice"></div>
+            <button class="btn_search btn" id ="search">Search<i></i></button>
+        </div>
+    </header>
+
+    <div class=central-info_block">
+        <div class="location_info">
+            <p class="loc_info_place">
+                <span id="city"></span>
+                <span>,</span>
+                <span id="country"></span>
+            </p>
+            <div class="loc_info_date">
+                <span class="location_day" id="city_date"></span>
+                <span class="location_time" id="city_time"></span>
+            </div>
+            <div class="loc_info_weather">
+                <p class="weather_temp">
+                    <span id="curr_temp"></span>
+                    <span id="degree_symb">°</span>
+                    <span><i class="weather_icon owf owf-201" id="weather_icon"></i></span>
+                </p>
+
+                <div class="weather_details">
+                    <p class="apparent_temperature">
+                        <span id="apparent_text"></span>
+                        <span id="apparent_value"></span>
+                        <span>°</span></p>
+
+                    <p class="wind_speed">
+                        <span id="wind_text"></span>
+                        <span id="wind_value"></span>
+                        <span id="wind_units">m/s</span></p>
+
+                    <p class="humidity">
+                        <span id="humidity_text"></span>
+                        <span id="humidity_value"></span>
+                        <span>%</span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="geolocation_info">
+            <div id="map"></div>
+            <div class="map_coordinates">
+                <p class="latitude">
+                    <span id="latitude_text"></span>
+                    <span id="latitude_value"></span>
+                </p>
+                <p class="longitude">
+                    <span id="longitude_text"> </span>
+                    <span id="longitude_value"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="forecast">
+        <div class="day_one days" >
+            <p class="day" id="day_one_name"></p>
+            <p class="location_temperature" >
+                <span class="day_temperature" id="day_one_temp">10</span>
+                <span class="day_degree">°</span>
+                <span><i class="  " id="day_one_icon" ></i></span>
+            </p>
+        </div>
+
+        <div class="day_two days" >
+            <p class="day" id="day_two_name"></p>
+            <p class="location_temperature" >
+                <span class="day_temperature" id="day_two_temp">10</span>
+                <span class="day_degree">°</span>
+                <span><i class="  "id="day_two_icon" ></i></span>
+            </p>
+        </div>
+
+        <div class="day-three days" >
+            <p class="day" id="day_three_name"></p>
+            <p class="location_temperature" >
+                <span class="day_temperature" id="day_three_temp">10</span>
+                <span class="day_degree">°</span>
+                <span><i class=" "id="day_three_icon"></i></span>
+            </p>
+        </div>
+    </div>
+</div>
+<script src="scripts/main.js"></script>
+</body>
+</html>
